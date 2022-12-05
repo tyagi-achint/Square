@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square</title>
+    <style>
+      body {
+        background-color: #daeaf1;
+        text-align: center;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      input {
+        margin: auto;
+        text-align: center;
+        display: block;
+        width: 20%;
+        background: #f7f7f7;
+        font-family: cursive;
+        font-size: 20px;
+        line-height: 1.5;
+        color: #666;
+        border-radius: 5mm;
+        padding: 2mm;
+        border: none;
+        outline: none;
+        font-weight: bolder;
+      }
+
+      button {
+        display: inline;
+        margin: 2mm;
+        background: #f7f7f7;
+        font-family: cursive;
+        font-size: 15px;
+        color: #666;
+        border-radius: 5mm;
+        padding: 2mm;
+        border: none;
+        outline: none;
+        font-weight: bolder;
+      }
+
+      button:hover {
+        background-color: #666;
+        color: #f7f7f7;
+        box-shadow: 1px 1px 10px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+        font-family: "Fredoka One", cursive;
+        color: #666;
+        margin: 1mm;
+      }
+
+      tr {
+        border-bottom: 0.1mm solid black;
+      }
+
+      th {
+        background-color: #bfa797;
+        font-size: xx-large;
+        font-family: "Edu NSW ACT Foundation", cursive;
+        color: black;
+      }
+
+      table {
+        margin: 7mm auto;
+        min-width: 1100px;
+        font-family: "Arima", cursive;
+        font-size: larger;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      tr:nth-of-type(odd) {
+        background-color: #f7f7f7;
+        color: #562b08;
+      }
+
+      td:nth-of-type(1) {
+        padding-left: 3mm;
+      }
+
+      td {
+        padding: 2mm 5mm 0 5mm;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <table>
+        <tr>
+          <th>Number</th>
+          <th>Square</th>
+          <th>Number</th>
+          <th>Square</th>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td id="1"></td>
+          <td>22</td>
+          <td id="11"></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td id="2"></td>
+          <td>24</td>
+          <td id="12"></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td id="3"></td>
+          <td>26</td>
+          <td id="13"></td>
+        </tr>
+
+        <tr>
+          <td>8</td>
+          <td id="4"></td>
+          <td>28</td>
+          <td id="14"></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td id="5"></td>
+          <td>30</td>
+          <td id="15"></td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td id="6"></td>
+          <td>32</td>
+          <td id="16"></td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td id="7"></td>
+          <td>34</td>
+          <td id="17"></td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td id="8"></td>
+          <td>36</td>
+          <td id="18"></td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td id="9"></td>
+          <td>38</td>
+          <td id="19"></td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td id="10"></td>
+          <td>40</td>
+          <td id="20"></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <input type="number" placeholder="Enter a Number" id="frm_number" />
+      <button onclick="myFunction()">Try it</button>
+      <h2 id="result"></h2>
+    </div>
+  </body>
+  <script>    
+    var a;
+    var arr=[];
+    for (var i = 2; i < 41; i++) {
+      if(i%2==0){
+        a=0;
+      a = i * i;
+      arr.push(a);
+    }
+  }
+      for (var i = 0; i < 20; i++) {
+      document.getElementById(i+1).innerHTML = arr[i];}
+    function myFunction() {
+      var x = document.getElementById("frm_number").value;
+      var y = x * x;
+      if (y == 0) {
+        document.getElementById("result").innerHTML =
+          "The Number is Zero i.e its Square will be 0";
+      } else {
+        document.getElementById("result").innerHTML ="Square : "+ y;
+      }
+    }
+  </script>
+</html>
